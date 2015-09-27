@@ -37,6 +37,7 @@
 
 
  The R script called run_analysis.R does the following. 
+ 
  1.Merges the training and the test sets to create one data set.
  
  2.Extracts only the measurements on the mean and standard deviation for each measurement. 
@@ -47,10 +48,11 @@
  
  5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
+## Libraries
  Before the R srcipt can be run the following libraries have to load:
  data.table and reshape2.
 
-Data sets and variables:
+## Data sets and variables:
 subject_training is load from subject_train.txt
 activity_training is load from y_train.txt
 features_training is load from X_train.txt
@@ -60,16 +62,21 @@ features_test is load from X_test.txt
 feature_names is load from features.txt
 activity_labels is load from activity_labels.txt
 
+
 activity is combined the activity training and test sets (activity_training + activity_test)
 features is combined the features training and test sets (features_training + features_test)
 subject is combined the subject training and test sets (subject_training + subject_test)
 
+
 tidydata is combined all three sets (features + activity +subject)
+
 
 melt_variable is molten data set of section 4.
 tidydata_mean is a final tidy data, which is cast from molten data set.
 
+
 columns_mean_std is grep (the mean and standard deviation) of column V2 of feature_names.
+
 
 tidydata_mean.txt is the data set file of section 5. It is tidy data set with the average 
 of each variable for each activity and each subject.
